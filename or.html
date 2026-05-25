@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superpotències - Olympic Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-[#0a0a0c] text-slate-200 min-h-screen">
+    
+    <nav class="border-b border-white/5 p-4 flex justify-between items-center sticky top-0 bg-[#0a0a0c]/80 backdrop-blur-md z-50">
+        <a href="index.html" class="font-bold tracking-tighter text-xl">OLYMPIC <span class="text-accent">LAB</span></a>
+        <div class="flex gap-6 text-sm font-medium">
+            <a href="bronze.html" class="hover:text-white transition-colors">BRONZE</a>
+            <a href="plata.html" class="hover:text-white transition-colors">PLATA</a>
+            <a href="or.html" class="text-[#fbbf24] border-b border-[#fbbf24]">OR</a>
+            <a href="mapa.html" class="hover:text-white transition-colors">MAPA</a>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto p-6 md:p-12">
+        <header class="mb-12">
+            <div class="flex items-center gap-4 mb-4">
+                <span class="px-3 py-1 bg-amber-400/20 text-[#fbbf24] text-xs font-bold rounded-full uppercase tracking-widest">Secció Or</span>
+                <h1 class="text-4xl font-extrabold tracking-tight">L'Elit: Top 5 Superpotències</h1>
+            </div>
+            <p class="text-slate-400 max-w-3xl text-lg leading-relaxed">
+                Anàlisi comparativa de les 5 nacions amb major volum de medalles segons el dataset (1992-2014). 
+                Un pols històric entre <span class="text-white font-bold">Alemanya, Rússia, Xina, França i Austràlia</span>.
+            </p>
+        </header>
+
+        <!-- Top 5 Grid -->
+        <section class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-8">
+            <div class="glass-card p-4 rounded-xl text-center border-t-2 border-amber-500">
+                <span class="text-xs text-slate-500 font-mono">#1</span>
+                <h4 class="font-bold">DEU</h4>
+                <p class="text-2xl font-black">512</p>
+            </div>
+            <div class="glass-card p-4 rounded-xl text-center border-t-2 border-slate-400">
+                <span class="text-xs text-slate-500 font-mono">#2</span>
+                <h4 class="font-bold">RUS</h4>
+                <p class="text-2xl font-black">498</p>
+            </div>
+            <div class="glass-card p-4 rounded-xl text-center border-t-2 border-orange-600">
+                <span class="text-xs text-slate-500 font-mono">#3</span>
+                <h4 class="font-bold">CHN</h4>
+                <p class="text-2xl font-black">420</p>
+            </div>
+            <div class="glass-card p-4 rounded-xl text-center border-white/10">
+                <span class="text-xs text-slate-500 font-mono">#4</span>
+                <h4 class="font-bold">FRA</h4>
+                <p class="text-2xl font-black">278</p>
+            </div>
+            <div class="glass-card p-4 rounded-xl text-center border-white/10">
+                <span class="text-xs text-slate-500 font-mono">#5</span>
+                <h4 class="font-bold">AUS</h4>
+                <p class="text-2xl font-black">254</p>
+            </div>
+        </section>
+
+        <section class="glass-card rounded-2xl p-6 h-[600px] relative mb-12">
+            <h3 class="text-sm font-bold text-amber-500 uppercase tracking-widest mb-4">Evolució Dominància (Cicles de 4 Anys)</h3>
+            <div class="h-[500px] w-full">
+                <canvas id="top5Chart"></canvas>
+            </div>
+        </section>
+
+        <!-- Secció Triple Treemap -->
+        <section class="glass-card rounded-2xl p-8 min-h-[700px] relative">
+            <header class="mb-12 text-center">
+                <h3 class="text-xl font-bold text-gradient uppercase tracking-tight">Distribució Jeràrquica per Tipus de Medalla</h3>
+                <p class="text-sm text-slate-500 max-w-2xl mx-auto">Comparativa global: Existeix correlació entre el volum d'Or i la resta de metalls? Analitzem si el domini és selectiu o integral.</p>
+            </header>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 justify-items-center">
+                <!-- Treemap OR -->
+                <div class="flex flex-col gap-4 w-full max-w-[400px]">
+                    <h4 class="text-center text-xs font-bold text-amber-500 uppercase tracking-widest">Medalles d'OR</h4>
+                    <div id="treemap-gold" class="w-full h-[450px] glass-card rounded-xl p-2 flex items-center justify-center overflow-hidden"></div>
+                </div>
+                <!-- Treemap PLATA -->
+                <div class="flex flex-col gap-4 w-full max-w-[400px]">
+                    <h4 class="text-center text-xs font-bold text-slate-400 uppercase tracking-widest">Medalles de PLATA</h4>
+                    <div id="treemap-silver" class="w-full h-[450px] glass-card rounded-xl p-2 flex items-center justify-center overflow-hidden"></div>
+                </div>
+                <!-- Treemap BRONZE -->
+                <div class="flex flex-col gap-4 w-full max-w-[400px]">
+                    <h4 class="text-center text-xs font-bold text-orange-700 uppercase tracking-widest">Medalles de BRONZE</h4>
+                    <div id="treemap-bronze" class="w-full h-[450px] glass-card rounded-xl p-2 flex items-center justify-center overflow-hidden"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="data-bundle.js"></script>
+    <script src="cycle-data-bundle.js"></script>
+    <script src="shared.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+        function renderTreemap(containerId, data, colorScale) {
+            const container = document.getElementById(containerId);
+            const width = container.offsetWidth;
+            const height = container.offsetHeight;
+
+            const root = d3.hierarchy({ children: data })
+                .sum(d => d.value)
+                .sort((a, b) => b.value - a.value);
+
+            d3.treemap()
+                .size([width, height])
+                .padding(1)
+                (root);
+
+            const svg = d3.select(`#${containerId}`)
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .style("overflow", "hidden");
+
+            const leaf = svg.selectAll("g")
+                .data(root.leaves())
+                .join("g")
+                .attr("transform", d => `translate(${d.x0},${d.y0})`);
+
+            leaf.append("rect")
+                .attr("width", d => Math.max(0, d.x1 - d.x0))
+                .attr("height", d => Math.max(0, d.y1 - d.y0))
+                .attr("fill", (d, i) => colorScale(1 - i/data.length))
+                .attr("opacity", 0.9)
+                .attr("stroke", "none");
+
+            leaf.append("text")
+                .attr("x", 3)
+                .attr("y", 12)
+                .attr("fill", "white")
+                .attr("font-size", "9px")
+                .attr("font-weight", "bold")
+                .text(d => (d.x1 - d.x0) > 25 ? d.data.name.substring(0, 3) : "");
+
+            leaf.append("title")
+                .text(d => `${d.data.name}: ${d.value}`);
+        }
+
+        async function initVisuals() {
+            const data = await loadDataset(DATA_PATHS.medals_imf);
+            if (!data) return;
+
+            // 1. Preparar dades per als 3 Treemaps
+            const countryCodes = [...new Set(data.map(d => d.imf_country_code))];
+            
+            const getTotals = (medalKey) => countryCodes.map(code => {
+                const matches = data.filter(d => d.imf_country_code === code);
+                const name = matches.length > 0 ? (matches[0].imf_country_name || matches[0].country_name_clean) : code;
+                const value = matches.reduce((s, d) => s + (parseInt(d[medalKey]) || 0), 0);
+                return { name, value };
+            }).filter(d => d.value > 2);
+
+            renderTreemap('treemap-gold', getTotals('gold_medals'), d3.interpolateYlOrRd);
+            renderTreemap('treemap-silver', getTotals('silver_medals'), d3.interpolateBlues);
+            renderTreemap('treemap-bronze', getTotals('bronze_medals'), d3.interpolateGreens);
+
+            // 2. Gràfic de Superpotències (repetim la lògica anterior però assegurant RUS i CHN)
+            const top5Codes = ['DEU', 'RUS', 'CHN', 'FRA', 'AUS'];
+            const namesMap = { 'DEU': 'Alemanya', 'RUS': 'Rússia', 'CHN': 'Xina', 'FRA': 'França', 'AUS': 'Austràlia' };
+            const cycles = [
+                { label: '1992-1995', years: [1992, 1993, 1994, 1995] },
+                { label: '1996-1999', years: [1996, 1997, 1998, 1999] },
+                { label: '2000-2003', years: [2000, 2001, 2002, 2003] },
+                { label: '2004-2007', years: [2004, 2005, 2006, 2007] },
+                { label: '2008-2011', years: [2008, 2009, 2010, 2011] },
+                { label: '2012-2014', years: [2012, 2013, 2014] }
+            ];
+
+            const datasets = top5Codes.map(code => {
+                const countryData = data.filter(d => d.imf_country_code === code);
+                const cycleTotals = cycles.map(c => countryData.filter(d => c.years.includes(parseInt(d.year))).reduce((s, d) => s + (parseInt(d.total_medals) || 0), 0));
+                const colors = { 'DEU': '#fbbf24', 'RUS': '#94a3b8', 'CHN': '#d97706', 'FRA': '#22d3ee', 'AUS': '#ec4899' };
+                return {
+                    label: namesMap[code],
+                    data: cycleTotals,
+                    borderColor: colors[code],
+                    backgroundColor: colors[code] + 'bb',
+                    fill: true,
+                    tension: 0.4
+                };
+            });
+
+            new Chart(document.getElementById('top5Chart').getContext('2d'), {
+                type: 'line',
+                data: { labels: cycles.map(c => c.label), datasets: datasets },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { stacked: true, beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' } },
+                        x: { grid: { color: 'rgba(255,255,255,0.05)' } }
+                    }
+                }
+            });
+
+            document.getElementById('chart-loader').style.display = 'none';
+        }
+
+        window.addEventListener('load', initVisuals);
+    </script>
+</body>
+</html>

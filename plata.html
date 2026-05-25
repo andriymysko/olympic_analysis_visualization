@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estabilitat - Olympic Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-[#0a0a0c] text-slate-200 min-h-screen">
+    
+    <nav class="border-b border-white/5 p-4 flex justify-between items-center sticky top-0 bg-[#0a0a0c]/80 backdrop-blur-md z-50">
+        <a href="index.html" class="font-bold tracking-tighter text-xl">OLYMPIC <span class="text-accent">LAB</span></a>
+        <div class="flex gap-6 text-sm font-medium">
+            <a href="bronze.html" class="hover:text-white transition-colors">BRONZE</a>
+            <a href="plata.html" class="text-[#94a3b8] border-b border-[#94a3b8]">PLATA</a>
+            <a href="or.html" class="hover:text-white transition-colors">OR</a>
+            <a href="mapa.html" class="hover:text-white transition-colors">MAPA</a>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto p-6 md:p-12">
+        <header class="mb-12">
+            <div class="flex items-center gap-4 mb-4">
+                <span class="px-3 py-1 bg-slate-500/20 text-[#94a3b8] text-xs font-bold rounded-full uppercase tracking-widest">Secció Plata</span>
+                <h1 class="text-4xl font-extrabold tracking-tight">Estabilitat i Sostenibilitat</h1>
+            </div>
+            <p class="text-slate-400 max-w-3xl text-lg leading-relaxed">
+                Com reacciona el rendiment esportiu davant la volatilitat econòmica? 
+                Explorem la relació entre la variació del PIB durant els cicles olímpics i la persistència del medaller.
+            </p>
+        </header>
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Gràfic Estiu -->
+            <div class="glass-card rounded-2xl p-6 h-[500px] relative">
+                <h3 class="text-sm font-bold text-[#94a3b8] uppercase tracking-widest mb-4">Estabilitat Estiu</h3>
+                <div class="h-[380px] w-full">
+                    <canvas id="stabilitySummer"></canvas>
+                </div>
+                <div class="absolute top-16 right-8 text-right">
+                    <div class="text-[10px] text-slate-500 uppercase">Correlació R²</div>
+                    <div id="r2-summer" class="text-xl font-mono text-accent">--</div>
+                </div>
+            </div>
+
+            <!-- Gràfic Hivern -->
+            <div class="glass-card rounded-2xl p-6 h-[500px] relative">
+                <h3 class="text-sm font-bold text-blue-400 uppercase tracking-widest mb-4">Estabilitat Hivern</h3>
+                <div class="h-[380px] w-full">
+                    <canvas id="stabilityWinter"></canvas>
+                </div>
+                <div class="absolute top-16 right-8 text-right">
+                    <div class="text-[10px] text-slate-500 uppercase">Correlació R²</div>
+                    <div id="r2-winter" class="text-xl font-mono text-accent">--</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="data-bundle.js"></script>
+    <script src="cycle-data-bundle.js"></script>
+    <script src="shared.js"></script>
+    <script>
+        function createStabilityChart(ctxId, r2Id, data, color) {
+            const points = data.map(d => ({
+                x: parseFloat(d.pt_gdp_prev_cycle_cv),
+                y: parseInt(d.total_medals),
+                country: d.country_name
+            })).filter(p => !isNaN(p.x));
+
+            const regression = calculateRegression(points);
+            document.getElementById(r2Id).innerText = regression.r2.toFixed(3);
+
+            new Chart(document.getElementById(ctxId), {
+                type: 'scatter',
+                data: {
+                    datasets: [
+                        {
+                            label: 'Països',
+                            data: points,
+                            backgroundColor: color + '66',
+                            borderColor: color,
+                            borderWidth: 1,
+                            pointRadius: 4
+                        },
+                        {
+                            label: 'Tendència',
+                            data: regression.line,
+                            type: 'line',
+                            borderColor: 'rgba(255,255,255,0.3)',
+                            borderDash: [5, 5],
+                            borderWidth: 1,
+                            pointRadius: 0,
+                            fill: false
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { title: { display: true, text: 'Volatilitat (CV)' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                        y: { title: { display: true, text: 'Medalles' }, grid: { color: 'rgba(255,255,255,0.05)' } }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        }
+
+        async function init() {
+            const data = await loadDataset(DATA_PATHS.cycle_analysis);
+            const summerData = data.filter(d => d.season === 'Summer');
+            const winterData = data.filter(d => d.season === 'Winter');
+
+            createStabilityChart('stabilitySummer', 'r2-summer', summerData, '#94a3b8');
+            createStabilityChart('stabilityWinter', 'r2-winter', winterData, '#60a5fa');
+        }
+
+        window.addEventListener('load', init);
+    </script>
+</body>
+</html>

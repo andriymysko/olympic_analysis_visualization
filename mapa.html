@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador - Olympic Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- D3.js i Chart.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/topojson@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-[#0a0a0c] text-slate-200 h-screen overflow-hidden flex flex-col">
+    
+    <nav class="border-b border-white/5 p-4 flex justify-between items-center bg-[#0a0a0c] z-50">
+        <a href="index.html" class="font-bold tracking-tighter text-xl">OLYMPIC <span class="text-accent">LAB</span></a>
+        <div class="flex gap-6 text-sm font-medium">
+            <a href="bronze.html" class="hover:text-white transition-colors">BRONZE</a>
+            <a href="plata.html" class="hover:text-white transition-colors">PLATA</a>
+            <a href="or.html" class="hover:text-white transition-colors">OR</a>
+            <a href="mapa.html" class="text-accent border-b border-accent">MAPA</a>
+        </div>
+    </nav>
+
+    <div class="flex-1 flex overflow-hidden">
+        <!-- Mapa Principal -->
+        <main class="flex-1 relative bg-[#0b0b0d] overflow-hidden">
+            <div id="map-container" class="w-full h-full"></div>
+            
+            <!-- Controles del mapa -->
+            <div class="absolute top-6 left-6 flex flex-col gap-2">
+                <button id="zoom-in" class="w-10 h-10 glass-card rounded-lg flex items-center justify-center hover:bg-white/10 text-xl font-bold">+</button>
+                <button id="zoom-out" class="w-10 h-10 glass-card rounded-lg flex items-center justify-center hover:bg-white/10 text-xl font-bold">-</button>
+                <button id="zoom-reset" class="w-10 h-10 glass-card rounded-lg flex items-center justify-center hover:bg-white/10 text-sm">RST</button>
+            </div>
+
+            <!-- Tooltip -->
+            <div id="map-tooltip" class="absolute hidden bg-black/90 border border-white/10 p-3 rounded-lg text-xs pointer-events-none z-40 backdrop-blur-md shadow-2xl min-w-[120px]"></div>
+            
+            <!-- Llegenda -->
+            <div class="absolute bottom-8 left-8 glass-card p-5 rounded-2xl border border-white/5 shadow-2xl">
+                <h4 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Total Medalles (1992-2014)</h4>
+                <div class="flex flex-col gap-2">
+                    <div class="h-3 w-48 rounded-full bg-gradient-to-r from-[#1e293b] via-[#0891b2] to-[#22d3ee]"></div>
+                    <div class="flex justify-between text-[10px] font-mono text-slate-400">
+                        <span>0</span>
+                        <span>250</span>
+                        <span>500+</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Panell Lateral (Detalls) -->
+        <aside id="country-sidebar" class="w-96 border-l border-white/5 bg-[#0a0a0c] flex flex-col fixed inset-y-0 right-0 z-[60] translate-x-full transition-transform duration-500 ease-in-out shadow-[-20px_0_40px_rgba(0,0,0,0.5)]">
+            <div class="p-6 border-b border-white/5 flex justify-between items-center">
+                <h2 id="sidebar-title" class="text-xl font-black tracking-tight text-gradient">DETALLS PAÍS</h2>
+                <button id="close-sidebar" class="w-8 h-8 rounded-full hover:bg-white/5 flex items-center justify-center transition-colors">✕</button>
+            </div>
+            
+            <div id="sidebar-content" class="flex-1 overflow-y-auto p-6 space-y-8">
+                <!-- Estats inicials o buits -->
+                <div class="text-center py-20 text-slate-600">
+                    <p class="text-sm italic">Selecciona un país al mapa per veure l'anàlisi històrica.</p>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="data-bundle.js"></script>
+    <script src="cycle-data-bundle.js"></script>
+    <script src="shared.js"></script>
+    <script>
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        const svg = d3.select("#map-container")
+            .append("svg")
+            .attr("width", "100%")
+            .attr("height", "100%")
+            .attr("viewBox", `0 0 ${width} ${height}`)
+            .attr("preserveAspectRatio", "xMidYMid meet");
+
+        const g = svg.append("g");
+
+        const projection = d3.geoMercator()
+            .scale(width / 6.5)
+            .translate([width / 2.2, height / 1.6]);
+
+        const path = d3.geoPath().projection(projection);
+
+        const zoom = d3.zoom()
+            .scaleExtent([1, 8])
+            .on("zoom", (event) => {
+                g.attr("transform", event.transform);
+            });
+
+        svg.call(zoom);
+
+        // Tooltip logic
+        const tooltip = d3.select("#map-tooltip");
+
+        // Color Scale
+        const colorScale = d3.scaleThreshold()
+            .domain([1, 10, 50, 100, 250, 500])
+            .range(["#1e293b", "#0e7490", "#0891b2", "#06b6d4", "#22d3ee", "#67e8f9", "#a5f3fc"]);
+
+        async function initMap() {
+            const worldData = await d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson");
+            const medalData = await loadDataset(DATA_PATHS.medals_imf);
+            
+            // Agregar medalles per país
+            const countryMedals = {};
+            medalData.forEach(d => {
+                const code = d.imf_country_code;
+                const total = parseInt(d.total_medals) || 0;
+                if (!countryMedals[code]) countryMedals[code] = { total: 0, name: d.country_name_clean, records: [] };
+                countryMedals[code].total += total;
+                countryMedals[code].records.push(d);
+            });
+
+            g.selectAll("path")
+                .data(worldData.features)
+                .enter()
+                .append("path")
+                .attr("d", path)
+                .attr("fill", d => {
+                    const code = d.id;
+                    const data = countryMedals[code];
+                    return data ? colorScale(data.total) : "#16161a";
+                })
+                .attr("stroke", "#0a0a0c")
+                .attr("stroke-width", 0.5)
+                .attr("class", "country cursor-pointer transition-colors duration-200")
+                .on("mouseover", function(event, d) {
+                    d3.select(this).attr("stroke", "#22d3ee").attr("stroke-width", 1.5).raise();
+                    const data = countryMedals[d.id];
+                    tooltip.classed("hidden", false)
+                        .html(`
+                            <div class="font-bold text-accent mb-1">${d.properties.name}</div>
+                            <div class="flex justify-between gap-4">
+                                <span class="text-slate-400">Medalles:</span>
+                                <span class="font-mono font-bold">${data ? data.total : 0}</span>
+                            </div>
+                        `);
+                })
+                .on("mousemove", function(event) {
+                    tooltip.style("top", (event.pageY - 10) + "px")
+                           .style("left", (event.pageX + 15) + "px");
+                })
+                .on("mouseout", function() {
+                    d3.select(this).attr("stroke", "#0a0a0c").attr("stroke-width", 0.5);
+                    tooltip.classed("hidden", true);
+                })
+                .on("click", function(event, d) {
+                    const data = countryMedals[d.id];
+                    showCountryDetails(d.id, d.properties.name, data);
+                });
+        }
+
+        function showCountryDetails(code, name, data) {
+            const sidebar = document.getElementById('country-sidebar');
+            const content = document.getElementById('sidebar-content');
+            const title = document.getElementById('sidebar-title');
+
+            title.innerText = name.toUpperCase();
+            sidebar.classList.remove('translate-x-full');
+
+            // 1. Definir eix temporal fix (Jocs Olímpics 1992-2014)
+            const fixedYears = [1992, 1994, 1996, 1998, 2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014];
+
+            // 2. Mapejar medalles a l'eix fix (0 si no n'hi ha)
+            const medalTotals = fixedYears.map(y => {
+                if (!data) return 0;
+                const matches = data.records.filter(r => parseInt(r.year) === y);
+                return matches.reduce((s, r) => s + (parseInt(r.total_medals) || 0), 0);
+            });
+
+            // 3. Mapejar inversió a l'eix fix (null si no n'hi ha)
+            let spendingData = Array(fixedYears.length).fill(null);
+            let hasSpending = false;
+
+            if (typeof CYCLE_DATA !== 'undefined') {
+                fixedYears.forEach((y, i) => {
+                    const match = CYCLE_DATA.find(cd => (cd.imf_country_code === code || cd.country_code === code) && parseInt(cd.olympic_year) == y);
+                    if (match && match.pt_gdp_olympic_year) {
+                        spendingData[i] = parseFloat(match.pt_gdp_olympic_year);
+                        hasSpending = true;
+                    }
+                });
+            }
+
+            const totalMedals = data ? data.total : 0;
+            const avgSpending = hasSpending ? (spendingData.filter(v=>v!==null).reduce((a,b)=>a+b,0) / spendingData.filter(v=>v!==null).length).toFixed(2) : '--';
+            const transparencyStatus = hasSpending ? 
+                '<span class="text-[10px] text-green-500 font-bold">● DADES FMI DISPONIBLES</span>' : 
+                '<span class="text-[10px] text-orange-500 font-bold">● TRANSPARÈNCIA LIMITADA (FMI)</span>';
+
+            content.innerHTML = `
+                <div class="space-y-6">
+                    <div class="flex justify-center">${transparencyStatus}</div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="glass-card p-4 rounded-xl text-center">
+                            <div class="text-[10px] text-slate-500 uppercase mb-1">Total Medalles</div>
+                            <div class="text-2xl font-black text-accent">${totalMedals}</div>
+                        </div>
+                        <div class="glass-card p-4 rounded-xl text-center">
+                            <div class="text-[10px] text-slate-500 uppercase mb-1">Inv. Mitjana</div>
+                            <div class="text-2xl font-black text-amber-500">${avgSpending}%</div>
+                        </div>
+                    </div>
+                    
+                    <div class="glass-card p-4 rounded-xl h-64 relative overflow-hidden">
+                        <canvas id="sidebarChart"></canvas>
+                        ${!hasSpending ? `
+                            <div class="absolute inset-0 flex flex-col items-center justify-center bg-black/60 pointer-events-none p-6 text-center">
+                                <span class="text-xl mb-2">👁️‍🗨️</span>
+                                <p class="text-[10px] text-slate-400 leading-relaxed uppercase tracking-tighter">
+                                    Aquest país no reporta dades de despesa esportiva detallada a l'FMI per a aquest període.
+                                </p>
+                            </div>` : ''}
+                    </div>
+
+                    <div>
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Línia Temporal (92-14)</h3>
+                        <div class="space-y-1 max-h-48 overflow-y-auto pr-2 custom-scroll">
+                            ${fixedYears.map((y, i) => {
+                                const medals = medalTotals[i];
+                                const spending = spendingData[i];
+                                if (medals === 0 && spending === null) return '';
+                                return `
+                                    <div class="flex justify-between items-center p-2 bg-white/5 rounded border border-white/5 text-[10px]">
+                                        <span class="font-bold text-slate-400">${y}</span>
+                                        <div class="flex gap-3">
+                                            <span class="text-accent font-bold">${medals} <span class="text-[8px] text-slate-600">med.</span></span>
+                                            ${spending !== null ? `<span class="text-amber-500 font-bold">${spending.toFixed(2)}% <span class="text-[8px] text-slate-600">PIB</span></span>` : ''}
+                                        </div>
+                                    </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            const ctx = document.getElementById('sidebarChart').getContext('2d');
+            
+            // Detectem si hi ha dades parcials per aplicar un estil de línia especial
+            const empiricalDataCount = spendingData.filter(v => v !== null).length;
+            const isPartialData = empiricalDataCount > 0 && empiricalDataCount < fixedYears.length;
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: fixedYears.map(y => "'" + String(y).slice(2)), // Format '92, '94...
+                    datasets: [
+                        {
+                            label: 'Medalles',
+                            data: medalTotals,
+                            backgroundColor: 'rgba(34, 211, 238, 0.4)',
+                            borderColor: '#22d3ee',
+                            borderWidth: 1,
+                            yAxisID: 'y',
+                            barPercentage: 0.8
+                        },
+                        {
+                            label: 'Inversió',
+                            data: spendingData,
+                            type: 'line',
+                            borderColor: '#fbbf24',
+                            borderWidth: 2,
+                            pointRadius: 4,
+                            pointBackgroundColor: '#fbbf24',
+                            pointHoverRadius: 6,
+                            yAxisID: 'y1',
+                            spanGaps: true, // Connecta els punts encara que hi hagi buits
+                            borderDash: isPartialData ? [5, 5] : [] // Línia discontínua si les dades són incompletes
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { 
+                            beginAtZero: true, 
+                            position: 'left', 
+                            grid: { color: 'rgba(255,255,255,0.05)' }, 
+                            ticks: { color: '#22d3ee', font: { size: 9 } } 
+                        },
+                        y1: { 
+                            beginAtZero: true, 
+                            position: 'right', 
+                            grid: { display: false }, 
+                            ticks: { color: '#fbbf24', font: { size: 9 } },
+                            suggestedMax: Math.max(...spendingData.filter(v=>v!==null), 0.5) 
+                        },
+                        x: { ticks: { color: '#64748b', font: { size: 8 } }, grid: { display: false } }
+                    },
+                    plugins: { 
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: (c) => {
+                                    if (c.datasetIndex === 1 && isPartialData) {
+                                        return `Inversió: ${c.raw}% (Dada puntual)`;
+                                    }
+                                    return `${c.dataset.label}: ${c.raw}`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        // Controls
+        document.getElementById('zoom-in').onclick = () => svg.transition().call(zoom.scaleBy, 1.5);
+        document.getElementById('zoom-out').onclick = () => svg.transition().call(zoom.scaleBy, 0.7);
+        document.getElementById('zoom-reset').onclick = () => svg.transition().call(zoom.transform, d3.zoomIdentity);
+        document.getElementById('close-sidebar').onclick = () => document.getElementById('country-sidebar').classList.add('translate-x-full');
+
+        initMap();
+    </script>
+</body>
+</html>

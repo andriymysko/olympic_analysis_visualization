@@ -1,0 +1,540 @@
+season,year,country_code,country_name_clean,entity_type,imf_country_code,imf_country_name,mergeable_to_imf,bronze_medals,gold_medals,silver_medals,total_medals
+Summer,1992,GER,Germany,country,DEU,Germany,True,26,31,21,78
+Summer,1992,CHN,China,country,CHN,China,True,14,14,22,50
+Summer,1992,FRA,France,country,FRA,France,True,16,8,5,29
+Summer,1992,HUN,Hungary,country,HUN,Hungary,True,7,10,11,28
+Summer,1992,AUS,Australia,country,AUS,Australia,True,10,7,9,26
+Summer,1992,ESP,Spain,country,ESP,Spain,True,2,12,7,21
+Summer,1992,JPN,Japan,country,JPN,Japan,True,11,3,7,21
+Summer,1992,GBR,United Kingdom,country,GBR,United Kingdom,True,11,5,3,19
+Summer,1992,ITA,Italy,country,ITA,Italy,True,8,6,5,19
+Summer,1992,POL,Poland,country,POL,Poland,True,10,3,6,19
+Summer,1992,CAN,Canada,country,CAN,Canada,True,7,6,4,17
+Summer,1992,ROU,Romania,country,ROU,Romania,True,8,4,5,17
+Summer,1992,BUL,Bulgaria,country,BGR,Bulgaria,True,6,3,7,16
+Summer,1992,NED,Netherlands,country,NLD,Netherlands,True,7,2,6,15
+Summer,1992,SWE,Sweden,country,SWE,Sweden,True,4,1,7,12
+Summer,1992,NZL,New Zealand,country,NZL,New Zealand,True,5,1,4,10
+Summer,1992,KEN,Kenya,country,KEN,Kenya,True,2,2,4,8
+Summer,1992,NOR,Norway,country,NOR,Norway,True,1,2,4,7
+Summer,1992,DEN,Denmark,country,DNK,Denmark,True,4,1,1,6
+Summer,1992,TUR,Turkey,country,TUR,Turkiye,True,2,2,2,6
+Summer,1992,FIN,Finland,country,FIN,Finland,True,2,1,2,5
+Summer,1992,INA,Indonesia,country,IDN,Indonesia,True,1,1,2,4
+Summer,1992,JAM,Jamaica,country,JAM,Jamaica,True,1,0,3,4
+Summer,1992,BEL,Belgium,country,BEL,Belgium,True,2,0,1,3
+Summer,1992,BRA,Brazil,country,BRA,Brazil,True,0,2,1,3
+Summer,1992,CRO,Croatia,country,HRV,Croatia,True,2,0,1,3
+Summer,1992,ETH,Ethiopia,country,ETH,Ethiopia,True,2,1,0,3
+Summer,1992,IRI,Iran,country,IRN,"Iran, Islamic Rep.",True,2,0,1,3
+Summer,1992,LAT,Latvia,country,LVA,Latvia,True,1,0,2,3
+Summer,1992,MAR,Morocco,country,MAR,Morocco,True,1,1,1,3
+Summer,1992,AUT,Austria,country,AUT,Austria,True,0,0,2,2
+Summer,1992,EST,Estonia,country,EST,Estonia,True,1,1,0,2
+Summer,1992,GRE,Greece,country,GRC,Greece,True,0,2,0,2
+Summer,1992,IRL,Ireland,country,IRL,Ireland,True,0,1,1,2
+Summer,1992,ISR,Israel,country,ISR,Israel,True,1,0,1,2
+Summer,1992,LTU,Lithuania,country,LTU,Lithuania,True,1,1,0,2
+Summer,1992,MGL,Mongolia,country,MNG,Mongolia,True,2,0,0,2
+Summer,1992,NAM,Namibia,country,NAM,Namibia,True,0,0,2,2
+Summer,1992,RSA,South Africa,country,ZAF,South Africa,True,0,0,2,2
+Summer,1992,SLO,Slovenia,country,SVN,Slovenia,True,2,0,0,2
+Summer,1992,ARG,Argentina,country,ARG,Argentina,True,1,0,0,1
+Summer,1992,BAH,Bahamas,country,BHS,"Bahamas, The",True,1,0,0,1
+Summer,1992,MAS,Malaysia,country,MYS,Malaysia,True,1,0,0,1
+Summer,1992,MEX,Mexico,country,MEX,Mexico,True,0,0,1,1
+Summer,1992,PHI,Philippines,country,PHL,Philippines,True,1,0,0,1
+Summer,1992,SUI,Switzerland,country,CHE,Switzerland,True,0,1,0,1
+Summer,1992,THA,Thailand,country,THA,Thailand,True,1,0,0,1
+Winter,1992,GER,Germany,country,DEU,Germany,True,6,10,10,26
+Winter,1992,NOR,Norway,country,NOR,Norway,True,5,9,6,20
+Winter,1992,AUT,Austria,country,AUT,Austria,True,7,6,6,19
+Winter,1992,ITA,Italy,country,ITA,Italy,True,4,4,6,14
+Winter,1992,FRA,France,country,FRA,France,True,1,3,5,9
+Winter,1992,CAN,Canada,country,CAN,Canada,True,2,2,3,7
+Winter,1992,FIN,Finland,country,FIN,Finland,True,3,3,1,7
+Winter,1992,JPN,Japan,country,JPN,Japan,True,4,1,2,7
+Winter,1992,NED,Netherlands,country,NLD,Netherlands,True,2,1,1,4
+Winter,1992,SWE,Sweden,country,SWE,Sweden,True,3,1,0,4
+Winter,1992,CHN,China,country,CHN,China,True,0,0,3,3
+Winter,1992,SUI,Switzerland,country,CHE,Switzerland,True,2,1,0,3
+Winter,1992,LUX,Luxembourg,country,LUX,Luxembourg,True,0,0,2,2
+Winter,1992,ESP,Spain,country,ESP,Spain,True,1,0,0,1
+Winter,1992,NZL,New Zealand,country,NZL,New Zealand,True,0,0,1,1
+Winter,1994,NOR,Norway,country,NOR,Norway,True,5,10,11,26
+Winter,1994,GER,Germany,country,DEU,Germany,True,8,9,7,24
+Winter,1994,RUS,Russia,country,RUS,Russian Federation,True,4,11,8,23
+Winter,1994,ITA,Italy,country,ITA,Italy,True,8,7,5,20
+Winter,1994,CAN,Canada,country,CAN,Canada,True,4,3,6,13
+Winter,1994,AUT,Austria,country,AUT,Austria,True,4,2,3,9
+Winter,1994,SUI,Switzerland,country,CHE,Switzerland,True,2,3,4,9
+Winter,1994,FIN,Finland,country,FIN,Finland,True,5,0,1,6
+Winter,1994,JPN,Japan,country,JPN,Japan,True,2,1,2,5
+Winter,1994,FRA,France,country,FRA,France,True,3,0,1,4
+Winter,1994,NED,Netherlands,country,NLD,Netherlands,True,3,0,1,4
+Winter,1994,CHN,China,country,CHN,China,True,2,0,1,3
+Winter,1994,KAZ,Kazakhstan,country,KAZ,Kazakhstan,True,0,1,2,3
+Winter,1994,SWE,Sweden,country,SWE,Sweden,True,0,2,1,3
+Winter,1994,BLR,Belarus,country,BLR,Belarus,True,0,0,2,2
+Winter,1994,GBR,United Kingdom,country,GBR,United Kingdom,True,2,0,0,2
+Winter,1994,SLO,Slovenia,country,SVN,Slovenia,True,2,0,0,2
+Winter,1994,UKR,Ukraine,country,UKR,Ukraine,True,1,1,0,2
+Winter,1994,AUS,Australia,country,AUS,Australia,True,1,0,0,1
+Winter,1994,UZB,Uzbekistan,country,UZB,Uzbekistan,True,0,1,0,1
+Summer,1996,RUS,Russia,country,RUS,Russian Federation,True,16,26,21,63
+Summer,1996,GER,Germany,country,DEU,Germany,True,26,18,17,61
+Summer,1996,CHN,China,country,CHN,China,True,11,13,21,45
+Summer,1996,AUS,Australia,country,AUS,Australia,True,20,9,9,38
+Summer,1996,FRA,France,country,FRA,France,True,15,15,6,36
+Summer,1996,ITA,Italy,country,ITA,Italy,True,12,12,10,34
+Summer,1996,UKR,Ukraine,country,UKR,Ukraine,True,12,9,2,23
+Summer,1996,CAN,Canada,country,CAN,Canada,True,8,3,10,21
+Summer,1996,HUN,Hungary,country,HUN,Hungary,True,9,7,4,20
+Summer,1996,NED,Netherlands,country,NLD,Netherlands,True,10,4,5,19
+Summer,1996,ROU,Romania,country,ROU,Romania,True,8,4,7,19
+Summer,1996,POL,Poland,country,POL,Poland,True,5,7,5,17
+Summer,1996,ESP,Spain,country,ESP,Spain,True,6,5,5,16
+Summer,1996,BRA,Brazil,country,BRA,Brazil,True,9,3,3,15
+Summer,1996,BUL,Bulgaria,country,BGR,Bulgaria,True,5,3,7,15
+Summer,1996,GBR,United Kingdom,country,GBR,United Kingdom,True,6,1,8,15
+Summer,1996,BLR,Belarus,country,BLR,Belarus,True,7,1,6,14
+Summer,1996,JPN,Japan,country,JPN,Japan,True,5,3,6,14
+Summer,1996,CZE,Czech Republic,country,CZE,Czechia,True,4,4,3,11
+Summer,1996,KAZ,Kazakhstan,country,KAZ,Kazakhstan,True,4,3,4,11
+Summer,1996,GRE,Greece,country,GRC,Greece,True,0,4,4,8
+Summer,1996,SWE,Sweden,country,SWE,Sweden,True,2,2,4,8
+Summer,1996,KEN,Kenya,country,KEN,Kenya,True,3,1,3,7
+Summer,1996,NOR,Norway,country,NOR,Norway,True,3,2,2,7
+Summer,1996,SUI,Switzerland,country,CHE,Switzerland,True,0,4,3,7
+Summer,1996,BEL,Belgium,country,BEL,Belgium,True,2,2,2,6
+Summer,1996,DEN,Denmark,country,DNK,Denmark,True,1,4,1,6
+Summer,1996,JAM,Jamaica,country,JAM,Jamaica,True,2,1,3,6
+Summer,1996,NZL,New Zealand,country,NZL,New Zealand,True,1,3,2,6
+Summer,1996,TUR,Turkey,country,TUR,Turkiye,True,1,4,1,6
+Summer,1996,RSA,South Africa,country,ZAF,South Africa,True,1,3,1,5
+Summer,1996,FIN,Finland,country,FIN,Finland,True,1,1,2,4
+Summer,1996,INA,Indonesia,country,IDN,Indonesia,True,2,1,1,4
+Summer,1996,IRL,Ireland,country,IRL,Ireland,True,1,3,0,4
+Summer,1996,ARG,Argentina,country,ARG,Argentina,True,1,0,2,3
+Summer,1996,AUT,Austria,country,AUT,Austria,True,2,0,1,3
+Summer,1996,ETH,Ethiopia,country,ETH,Ethiopia,True,1,2,0,3
+Summer,1996,IRI,Iran,country,IRN,"Iran, Islamic Rep.",True,1,1,1,3
+Summer,1996,SVK,Slovakia,country,SVK,Slovak Republic,True,1,1,1,3
+Summer,1996,ARM,Armenia,country,ARM,Armenia,True,0,1,1,2
+Summer,1996,CRO,Croatia,country,HRV,Croatia,True,0,1,1,2
+Summer,1996,GEO,Georgia,country,GEO,Georgia,True,2,0,0,2
+Summer,1996,MAR,Morocco,country,MAR,Morocco,True,2,0,0,2
+Summer,1996,MAS,Malaysia,country,MYS,Malaysia,True,1,0,1,2
+Summer,1996,MDA,Moldova,country,MDA,Moldova,True,1,0,1,2
+Summer,1996,NAM,Namibia,country,NAM,Namibia,True,0,0,2,2
+Summer,1996,POR,Portugal,country,PRT,Portugal,True,1,1,0,2
+Summer,1996,SLO,Slovenia,country,SVN,Slovenia,True,0,0,2,2
+Summer,1996,THA,Thailand,country,THA,Thailand,True,1,1,0,2
+Summer,1996,TTO,Trinidad and Tobago,country,TTO,Trinidad and Tobago,True,2,0,0,2
+Summer,1996,UZB,Uzbekistan,country,UZB,Uzbekistan,True,1,0,1,2
+Summer,1996,AZE,Azerbaijan,country,AZE,Azerbaijan,True,0,0,1,1
+Summer,1996,BAH,Bahamas,country,BHS,"Bahamas, The",True,0,0,1,1
+Summer,1996,BDI,Burundi,country,BDI,Burundi,True,0,1,0,1
+Summer,1996,CRC,Costa Rica,country,CRI,Costa Rica,True,0,1,0,1
+Summer,1996,ECU,Ecuador,country,ECU,Ecuador,True,0,1,0,1
+Summer,1996,HKG,Hong Kong,country,HKG,"Hong Kong SAR, China",True,0,1,0,1
+Summer,1996,IND,India,country,IND,India,True,1,0,0,1
+Summer,1996,ISR,Israel,country,ISR,Israel,True,1,0,0,1
+Summer,1996,LAT,Latvia,country,LVA,Latvia,True,0,0,1,1
+Summer,1996,LTU,Lithuania,country,LTU,Lithuania,True,1,0,0,1
+Summer,1996,MEX,Mexico,country,MEX,Mexico,True,1,0,0,1
+Summer,1996,MGL,Mongolia,country,MNG,Mongolia,True,1,0,0,1
+Summer,1996,MOZ,Mozambique,country,MOZ,Mozambique,True,1,0,0,1
+Summer,1996,PHI,Philippines,country,PHL,Philippines,True,0,0,1,1
+Summer,1996,TGA,Tonga,country,TON,Tonga,True,0,0,1,1
+Summer,1996,TUN,Tunisia,country,TUN,Tunisia,True,1,0,0,1
+Summer,1996,UGA,Uganda,country,UGA,Uganda,True,1,0,0,1
+Summer,1996,ZAM,Zambia,country,ZMB,Zambia,True,0,0,1,1
+Winter,1998,GER,Germany,country,DEU,Germany,True,8,10,9,27
+Winter,1998,NOR,Norway,country,NOR,Norway,True,5,10,9,24
+Winter,1998,RUS,Russia,country,RUS,Russian Federation,True,3,9,6,18
+Winter,1998,AUT,Austria,country,AUT,Austria,True,9,3,3,15
+Winter,1998,CAN,Canada,country,CAN,Canada,True,4,6,4,14
+Winter,1998,FIN,Finland,country,FIN,Finland,True,5,2,4,11
+Winter,1998,ITA,Italy,country,ITA,Italy,True,2,2,6,10
+Winter,1998,JPN,Japan,country,JPN,Japan,True,4,5,1,10
+Winter,1998,NED,Netherlands,country,NLD,Netherlands,True,2,4,4,10
+Winter,1998,FRA,France,country,FRA,France,True,5,2,1,8
+Winter,1998,SUI,Switzerland,country,CHE,Switzerland,True,3,2,2,7
+Winter,1998,CHN,China,country,CHN,China,True,2,0,4,6
+Winter,1998,CZE,Czech Republic,country,CZE,Czechia,True,1,1,1,3
+Winter,1998,SWE,Sweden,country,SWE,Sweden,True,1,0,2,3
+Winter,1998,BLR,Belarus,country,BLR,Belarus,True,2,0,0,2
+Winter,1998,KAZ,Kazakhstan,country,KAZ,Kazakhstan,True,2,0,0,2
+Winter,1998,AUS,Australia,country,AUS,Australia,True,1,0,0,1
+Winter,1998,BEL,Belgium,country,BEL,Belgium,True,1,0,0,1
+Winter,1998,BUL,Bulgaria,country,BGR,Bulgaria,True,0,1,0,1
+Winter,1998,DEN,Denmark,country,DNK,Denmark,True,0,0,1,1
+Winter,1998,GBR,United Kingdom,country,GBR,United Kingdom,True,1,0,0,1
+Winter,1998,UKR,Ukraine,country,UKR,Ukraine,True,0,0,1,1
+Summer,2000,RUS,Russia,country,RUS,Russian Federation,True,28,30,26,84
+Summer,2000,AUS,Australia,country,AUS,Australia,True,16,15,24,55
+Summer,2000,GER,Germany,country,DEU,Germany,True,25,13,16,54
+Summer,2000,CHN,China,country,CHN,China,True,13,23,14,50
+Summer,2000,FRA,France,country,FRA,France,True,11,13,14,38
+Summer,2000,ITA,Italy,country,ITA,Italy,True,13,13,8,34
+Summer,2000,GBR,United Kingdom,country,GBR,United Kingdom,True,7,11,10,28
+Summer,2000,ROU,Romania,country,ROU,Romania,True,9,11,6,26
+Summer,2000,NED,Netherlands,country,NLD,Netherlands,True,4,11,9,24
+Summer,2000,UKR,Ukraine,country,UKR,Ukraine,True,10,3,10,23
+Summer,2000,JPN,Japan,country,JPN,Japan,True,5,5,8,18
+Summer,2000,BLR,Belarus,country,BLR,Belarus,True,11,3,3,17
+Summer,2000,HUN,Hungary,country,HUN,Hungary,True,3,8,6,17
+Summer,2000,BUL,Bulgaria,country,BGR,Bulgaria,True,2,5,6,13
+Summer,2000,CAN,Canada,country,CAN,Canada,True,7,3,3,13
+Summer,2000,GRE,Greece,country,GRC,Greece,True,3,4,6,13
+Summer,2000,POL,Poland,country,POL,Poland,True,3,5,5,13
+Summer,2000,SWE,Sweden,country,SWE,Sweden,True,3,4,5,12
+Summer,2000,BRA,Brazil,country,BRA,Brazil,True,6,0,5,11
+Summer,2000,ESP,Spain,country,ESP,Spain,True,5,3,3,11
+Summer,2000,NOR,Norway,country,NOR,Norway,True,3,4,3,10
+Summer,2000,JAM,Jamaica,country,JAM,Jamaica,True,4,0,5,9
+Summer,2000,SUI,Switzerland,country,CHE,Switzerland,True,2,1,6,9
+Summer,2000,CZE,Czech Republic,country,CZE,Czechia,True,3,2,3,8
+Summer,2000,ETH,Ethiopia,country,ETH,Ethiopia,True,3,3,1,7
+Summer,2000,KAZ,Kazakhstan,country,KAZ,Kazakhstan,True,0,3,4,7
+Summer,2000,KEN,Kenya,country,KEN,Kenya,True,2,2,3,7
+Summer,2000,DEN,Denmark,country,DNK,Denmark,True,1,2,3,6
+Summer,2000,GEO,Georgia,country,GEO,Georgia,True,6,0,0,6
+Summer,2000,INA,Indonesia,country,IDN,Indonesia,True,2,1,3,6
+Summer,2000,MEX,Mexico,country,MEX,Mexico,True,3,1,2,6
+Summer,2000,BEL,Belgium,country,BEL,Belgium,True,3,0,2,5
+Summer,2000,LTU,Lithuania,country,LTU,Lithuania,True,3,2,0,5
+Summer,2000,MAR,Morocco,country,MAR,Morocco,True,4,0,1,5
+Summer,2000,RSA,South Africa,country,ZAF,South Africa,True,3,0,2,5
+Summer,2000,SVK,Slovakia,country,SVK,Slovak Republic,True,1,1,3,5
+Summer,2000,TUR,Turkey,country,TUR,Turkiye,True,2,3,0,5
+Summer,2000,ARG,Argentina,country,ARG,Argentina,True,2,0,2,4
+Summer,2000,FIN,Finland,country,FIN,Finland,True,1,2,1,4
+Summer,2000,IRI,Iran,country,IRN,"Iran, Islamic Rep.",True,1,3,0,4
+Summer,2000,UZB,Uzbekistan,country,UZB,Uzbekistan,True,2,1,1,4
+Summer,2000,AUT,Austria,country,AUT,Austria,True,0,2,1,3
+Summer,2000,AZE,Azerbaijan,country,AZE,Azerbaijan,True,1,2,0,3
+Summer,2000,EST,Estonia,country,EST,Estonia,True,2,1,0,3
+Summer,2000,LAT,Latvia,country,LVA,Latvia,True,1,1,1,3
+Summer,2000,NZL,New Zealand,country,NZL,New Zealand,True,2,1,0,3
+Summer,2000,THA,Thailand,country,THA,Thailand,True,2,1,0,3
+Summer,2000,BAH,Bahamas,country,BHS,"Bahamas, The",True,0,2,0,2
+Summer,2000,CRC,Costa Rica,country,CRI,Costa Rica,True,2,0,0,2
+Summer,2000,CRO,Croatia,country,HRV,Croatia,True,1,1,0,2
+Summer,2000,MDA,Moldova,country,MDA,Moldova,True,1,0,1,2
+Summer,2000,POR,Portugal,country,PRT,Portugal,True,2,0,0,2
+Summer,2000,SLO,Slovenia,country,SVN,Slovenia,True,0,2,0,2
+Summer,2000,TTO,Trinidad and Tobago,country,TTO,Trinidad and Tobago,True,1,0,1,2
+Summer,2000,ARM,Armenia,country,ARM,Armenia,True,1,0,0,1
+Summer,2000,CHI,Chile,country,CHL,Chile,True,1,0,0,1
+Summer,2000,CMR,Cameroon,country,CMR,Cameroon,True,0,1,0,1
+Summer,2000,IND,India,country,IND,India,True,1,0,0,1
+Summer,2000,IRL,Ireland,country,IRL,Ireland,True,0,0,1,1
+Summer,2000,ISL,Iceland,country,ISL,Iceland,True,1,0,0,1
+Summer,2000,ISR,Israel,country,ISR,Israel,True,1,0,0,1
+Summer,2000,KGZ,Kyrgyzstan,country,KGZ,Kyrgyz Republic,True,1,0,0,1
+Summer,2000,KUW,Kuwait,country,KWT,Kuwait,True,1,0,0,1
+Summer,2000,MOZ,Mozambique,country,MOZ,Mozambique,True,0,1,0,1
+Summer,2000,SRI,Sri Lanka,country,LKA,Sri Lanka,True,0,0,1,1
+Summer,2000,URU,Uruguay,country,URY,Uruguay,True,0,0,1,1
+Winter,2002,GER,Germany,country,DEU,Germany,True,8,12,14,34
+Winter,2002,NOR,Norway,country,NOR,Norway,True,7,12,5,24
+Winter,2002,AUT,Austria,country,AUT,Austria,True,9,3,4,16
+Winter,2002,CAN,Canada,country,CAN,Canada,True,7,6,3,16
+Winter,2002,ITA,Italy,country,ITA,Italy,True,5,4,4,13
+Winter,2002,RUS,Russia,country,RUS,Russian Federation,True,4,5,3,12
+Winter,2002,SUI,Switzerland,country,CHE,Switzerland,True,6,3,2,11
+Winter,2002,FRA,France,country,FRA,France,True,2,4,4,10
+Winter,2002,CHN,China,country,CHN,China,True,4,2,2,8
+Winter,2002,NED,Netherlands,country,NLD,Netherlands,True,0,3,5,8
+Winter,2002,FIN,Finland,country,FIN,Finland,True,1,4,2,7
+Winter,2002,SWE,Sweden,country,SWE,Sweden,True,5,0,2,7
+Winter,2002,CRO,Croatia,country,HRV,Croatia,True,0,3,1,4
+Winter,2002,BUL,Bulgaria,country,BGR,Bulgaria,True,2,0,1,3
+Winter,2002,CZE,Czech Republic,country,CZE,Czechia,True,0,1,2,3
+Winter,2002,EST,Estonia,country,EST,Estonia,True,1,1,1,3
+Winter,2002,AUS,Australia,country,AUS,Australia,True,0,2,0,2
+Winter,2002,GBR,United Kingdom,country,GBR,United Kingdom,True,1,1,0,2
+Winter,2002,JPN,Japan,country,JPN,Japan,True,1,0,1,2
+Winter,2002,POL,Poland,country,POL,Poland,True,1,0,1,2
+Winter,2002,BLR,Belarus,country,BLR,Belarus,True,1,0,0,1
+Winter,2002,SLO,Slovenia,country,SVN,Slovenia,True,1,0,0,1
+Summer,2004,RUS,Russia,country,RUS,Russian Federation,True,36,26,27,89
+Summer,2004,CHN,China,country,CHN,China,True,14,27,17,58
+Summer,2004,GER,Germany,country,DEU,Germany,True,20,13,16,49
+Summer,2004,AUS,Australia,country,AUS,Australia,True,15,17,15,47
+Summer,2004,JPN,Japan,country,JPN,Japan,True,12,16,9,37
+Summer,2004,FRA,France,country,FRA,France,True,13,11,9,33
+Summer,2004,ITA,Italy,country,ITA,Italy,True,11,10,10,31
+Summer,2004,GBR,United Kingdom,country,GBR,United Kingdom,True,12,9,9,30
+Summer,2004,UKR,Ukraine,country,UKR,Ukraine,True,9,9,5,23
+Summer,2004,NED,Netherlands,country,NLD,Netherlands,True,9,4,8,21
+Summer,2004,ESP,Spain,country,ESP,Spain,True,5,3,10,18
+Summer,2004,ROU,Romania,country,ROU,Romania,True,6,8,4,18
+Summer,2004,HUN,Hungary,country,HUN,Hungary,True,3,8,6,17
+Summer,2004,GRE,Greece,country,GRC,Greece,True,4,6,6,16
+Summer,2004,BLR,Belarus,country,BLR,Belarus,True,7,2,6,15
+Summer,2004,CAN,Canada,country,CAN,Canada,True,3,3,6,12
+Summer,2004,BUL,Bulgaria,country,BGR,Bulgaria,True,8,2,1,11
+Summer,2004,BRA,Brazil,country,BRA,Brazil,True,3,5,2,10
+Summer,2004,POL,Poland,country,POL,Poland,True,5,3,2,10
+Summer,2004,TUR,Turkey,country,TUR,Turkiye,True,4,3,3,10
+Summer,2004,CZE,Czech Republic,country,CZE,Czechia,True,4,1,3,8
+Summer,2004,DEN,Denmark,country,DNK,Denmark,True,6,2,0,8
+Summer,2004,KAZ,Kazakhstan,country,KAZ,Kazakhstan,True,3,1,4,8
+Summer,2004,THA,Thailand,country,THA,Thailand,True,4,3,1,8
+Summer,2004,AUT,Austria,country,AUT,Austria,True,1,2,4,7
+Summer,2004,KEN,Kenya,country,KEN,Kenya,True,2,1,4,7
+Summer,2004,SWE,Sweden,country,SWE,Sweden,True,1,4,2,7
+Summer,2004,ARG,Argentina,country,ARG,Argentina,True,4,2,0,6
+Summer,2004,ETH,Ethiopia,country,ETH,Ethiopia,True,2,2,2,6
+Summer,2004,IRI,Iran,country,IRN,"Iran, Islamic Rep.",True,2,2,2,6
+Summer,2004,NOR,Norway,country,NOR,Norway,True,1,5,0,6
+Summer,2004,RSA,South Africa,country,ZAF,South Africa,True,2,1,3,6
+Summer,2004,SVK,Slovakia,country,SVK,Slovak Republic,True,2,2,2,6
+Summer,2004,AZE,Azerbaijan,country,AZE,Azerbaijan,True,4,1,0,5
+Summer,2004,CRO,Croatia,country,HRV,Croatia,True,2,1,2,5
+Summer,2004,EGY,Egypt,country,EGY,"Egypt, Arab Rep.",True,3,1,1,5
+Summer,2004,JAM,Jamaica,country,JAM,Jamaica,True,2,2,1,5
+Summer,2004,NZL,New Zealand,country,NZL,New Zealand,True,0,3,2,5
+Summer,2004,SUI,Switzerland,country,CHE,Switzerland,True,3,1,1,5
+Summer,2004,UZB,Uzbekistan,country,UZB,Uzbekistan,True,2,2,1,5
+Summer,2004,GEO,Georgia,country,GEO,Georgia,True,0,2,2,4
+Summer,2004,INA,Indonesia,country,IDN,Indonesia,True,2,1,1,4
+Summer,2004,LAT,Latvia,country,LVA,Latvia,True,0,0,4,4
+Summer,2004,MEX,Mexico,country,MEX,Mexico,True,1,0,3,4
+Summer,2004,SLO,Slovenia,country,SVN,Slovenia,True,3,0,1,4
+Summer,2004,BEL,Belgium,country,BEL,Belgium,True,2,1,0,3
+Summer,2004,CHI,Chile,country,CHL,Chile,True,1,2,0,3
+Summer,2004,EST,Estonia,country,EST,Estonia,True,2,0,1,3
+Summer,2004,LTU,Lithuania,country,LTU,Lithuania,True,0,1,2,3
+Summer,2004,MAR,Morocco,country,MAR,Morocco,True,0,2,1,3
+Summer,2004,POR,Portugal,country,PRT,Portugal,True,1,0,2,3
+Summer,2004,BAH,Bahamas,country,BHS,"Bahamas, The",True,1,1,0,2
+Summer,2004,FIN,Finland,country,FIN,Finland,True,0,0,2,2
+Summer,2004,ISR,Israel,country,ISR,Israel,True,1,1,0,2
+Summer,2004,CMR,Cameroon,country,CMR,Cameroon,True,0,1,0,1
+Summer,2004,DOM,Dominican Republic,country,DOM,Dominican Republic,True,0,1,0,1
+Summer,2004,HKG,Hong Kong,country,HKG,"Hong Kong SAR, China",True,0,0,1,1
+Summer,2004,IND,India,country,IND,India,True,0,0,1,1
+Summer,2004,MGL,Mongolia,country,MNG,Mongolia,True,1,0,0,1
+Summer,2004,PAR,Paraguay,country,PRY,Paraguay,True,0,0,1,1
+Summer,2004,TTO,Trinidad and Tobago,country,TTO,Trinidad and Tobago,True,1,0,0,1
+Winter,2006,GER,Germany,country,DEU,Germany,True,6,10,12,28
+Winter,2006,CAN,Canada,country,CAN,Canada,True,7,7,9,23
+Winter,2006,RUS,Russia,country,RUS,Russian Federation,True,8,8,6,22
+Winter,2006,AUT,Austria,country,AUT,Austria,True,6,9,6,21
+Winter,2006,NOR,Norway,country,NOR,Norway,True,9,2,8,19
+Winter,2006,SUI,Switzerland,country,CHE,Switzerland,True,5,4,4,13
+Winter,2006,SWE,Sweden,country,SWE,Sweden,True,5,6,2,13
+Winter,2006,ITA,Italy,country,ITA,Italy,True,6,5,0,11
+Winter,2006,CHN,China,country,CHN,China,True,4,2,4,10
+Winter,2006,FIN,Finland,country,FIN,Finland,True,3,0,6,9
+Winter,2006,FRA,France,country,FRA,France,True,4,3,2,9
+Winter,2006,NED,Netherlands,country,NLD,Netherlands,True,4,3,2,9
+Winter,2006,CZE,Czech Republic,country,CZE,Czechia,True,1,1,2,4
+Winter,2006,CRO,Croatia,country,HRV,Croatia,True,0,1,2,3
+Winter,2006,EST,Estonia,country,EST,Estonia,True,0,3,0,3
+Winter,2006,AUS,Australia,country,AUS,Australia,True,1,1,0,2
+Winter,2006,POL,Poland,country,POL,Poland,True,1,0,1,2
+Winter,2006,UKR,Ukraine,country,UKR,Ukraine,True,2,0,0,2
+Winter,2006,BLR,Belarus,country,BLR,Belarus,True,0,0,1,1
+Winter,2006,BUL,Bulgaria,country,BGR,Bulgaria,True,0,0,1,1
+Winter,2006,GBR,United Kingdom,country,GBR,United Kingdom,True,0,0,1,1
+Winter,2006,JPN,Japan,country,JPN,Japan,True,0,1,0,1
+Winter,2006,LAT,Latvia,country,LVA,Latvia,True,1,0,0,1
+Winter,2006,SVK,Slovakia,country,SVK,Slovak Republic,True,0,0,1,1
+Summer,2008,CHN,China,country,CHN,China,True,25,42,20,87
+Summer,2008,RUS,Russia,country,RUS,Russian Federation,True,27,23,20,70
+Summer,2008,GBR,United Kingdom,country,GBR,United Kingdom,True,14,18,12,44
+Summer,2008,AUS,Australia,country,AUS,Australia,True,15,13,13,41
+Summer,2008,FRA,France,country,FRA,France,True,18,7,16,41
+Summer,2008,GER,Germany,country,DEU,Germany,True,15,16,10,41
+Summer,2008,UKR,Ukraine,country,UKR,Ukraine,True,15,7,5,27
+Summer,2008,ITA,Italy,country,ITA,Italy,True,9,8,9,26
+Summer,2008,JPN,Japan,country,JPN,Japan,True,10,9,6,25
+Summer,2008,BLR,Belarus,country,BLR,Belarus,True,9,4,5,18
+Summer,2008,ESP,Spain,country,ESP,Spain,True,3,5,10,18
+Summer,2008,CAN,Canada,country,CAN,Canada,True,6,3,8,17
+Summer,2008,NED,Netherlands,country,NLD,Netherlands,True,4,7,5,16
+Summer,2008,BRA,Brazil,country,BRA,Brazil,True,8,3,4,15
+Summer,2008,KAZ,Kazakhstan,country,KAZ,Kazakhstan,True,7,2,4,13
+Summer,2008,KEN,Kenya,country,KEN,Kenya,True,4,4,4,12
+Summer,2008,HUN,Hungary,country,HUN,Hungary,True,2,3,5,10
+Summer,2008,POL,Poland,country,POL,Poland,True,1,3,6,10
+Summer,2008,NOR,Norway,country,NOR,Norway,True,1,3,5,9
+Summer,2008,NZL,New Zealand,country,NZL,New Zealand,True,4,3,2,9
+Summer,2008,JAM,Jamaica,country,JAM,Jamaica,True,2,4,2,8
+Summer,2008,ROU,Romania,country,ROU,Romania,True,3,4,1,8
+Summer,2008,TUR,Turkey,country,TUR,Turkiye,True,3,1,4,8
+Summer,2008,AZE,Azerbaijan,country,AZE,Azerbaijan,True,4,1,2,7
+Summer,2008,DEN,Denmark,country,DNK,Denmark,True,3,2,2,7
+Summer,2008,SUI,Switzerland,country,CHE,Switzerland,True,5,2,0,7
+Summer,2008,ARG,Argentina,country,ARG,Argentina,True,4,2,0,6
+Summer,2008,ARM,Armenia,country,ARM,Armenia,True,6,0,0,6
+Summer,2008,CZE,Czech Republic,country,CZE,Czechia,True,0,3,3,6
+Summer,2008,GEO,Georgia,country,GEO,Georgia,True,3,3,0,6
+Summer,2008,SVK,Slovakia,country,SVK,Slovak Republic,True,1,3,2,6
+Summer,2008,UZB,Uzbekistan,country,UZB,Uzbekistan,True,3,1,2,6
+Summer,2008,BUL,Bulgaria,country,BGR,Bulgaria,True,3,1,1,5
+Summer,2008,CRO,Croatia,country,HRV,Croatia,True,3,0,2,5
+Summer,2008,ETH,Ethiopia,country,ETH,Ethiopia,True,2,2,1,5
+Summer,2008,INA,Indonesia,country,IDN,Indonesia,True,3,1,1,5
+Summer,2008,LTU,Lithuania,country,LTU,Lithuania,True,3,0,2,5
+Summer,2008,SLO,Slovenia,country,SVN,Slovenia,True,2,1,2,5
+Summer,2008,SWE,Sweden,country,SWE,Sweden,True,1,0,4,5
+Summer,2008,FIN,Finland,country,FIN,Finland,True,2,1,1,4
+Summer,2008,GRE,Greece,country,GRC,Greece,True,2,0,2,4
+Summer,2008,MGL,Mongolia,country,MNG,Mongolia,True,0,2,2,4
+Summer,2008,THA,Thailand,country,THA,Thailand,True,0,2,2,4
+Summer,2008,AUT,Austria,country,AUT,Austria,True,2,0,1,3
+Summer,2008,IND,India,country,IND,India,True,2,1,0,3
+Summer,2008,IRL,Ireland,country,IRL,Ireland,True,2,0,1,3
+Summer,2008,LAT,Latvia,country,LVA,Latvia,True,1,1,1,3
+Summer,2008,MEX,Mexico,country,MEX,Mexico,True,1,2,0,3
+Summer,2008,SRB,Serbia,country,SRB,Serbia,True,2,0,1,3
+Summer,2008,BAH,Bahamas,country,BHS,"Bahamas, The",True,1,0,1,2
+Summer,2008,BEL,Belgium,country,BEL,Belgium,True,0,1,1,2
+Summer,2008,DOM,Dominican Republic,country,DOM,Dominican Republic,True,0,1,1,2
+Summer,2008,EST,Estonia,country,EST,Estonia,True,0,1,1,2
+Summer,2008,IRI,Iran,country,IRN,"Iran, Islamic Rep.",True,1,1,0,2
+Summer,2008,KGZ,Kyrgyzstan,country,KGZ,Kyrgyz Republic,True,1,0,1,2
+Summer,2008,MAR,Morocco,country,MAR,Morocco,True,1,0,1,2
+Summer,2008,POR,Portugal,country,PRT,Portugal,True,0,1,1,2
+Summer,2008,TJK,Tajikistan,country,TJK,Tajikistan,True,1,0,1,2
+Summer,2008,TTO,Trinidad and Tobago,country,TTO,Trinidad and Tobago,True,0,0,2,2
+Summer,2008,AFG,Afghanistan,country,AFG,Afghanistan,True,1,0,0,1
+Summer,2008,CHI,Chile,country,CHL,Chile,True,0,0,1,1
+Summer,2008,CMR,Cameroon,country,CMR,Cameroon,True,0,1,0,1
+Summer,2008,ECU,Ecuador,country,ECU,Ecuador,True,0,0,1,1
+Summer,2008,EGY,Egypt,country,EGY,"Egypt, Arab Rep.",True,1,0,0,1
+Summer,2008,ISL,Iceland,country,ISL,Iceland,True,0,0,1,1
+Summer,2008,ISR,Israel,country,ISR,Israel,True,1,0,0,1
+Summer,2008,MAS,Malaysia,country,MYS,Malaysia,True,0,0,1,1
+Summer,2008,MDA,Moldova,country,MDA,Moldova,True,1,0,0,1
+Summer,2008,MRI,Mauritius,country,MUS,Mauritius,True,1,0,0,1
+Summer,2008,PAN,Panama,country,PAN,Panama,True,0,1,0,1
+Summer,2008,RSA,South Africa,country,ZAF,South Africa,True,0,0,1,1
+Summer,2008,SGP,Singapore,country,SGP,Singapore,True,0,0,1,1
+Summer,2008,TOG,Togo,country,TGO,Togo,True,1,0,0,1
+Summer,2008,TUN,Tunisia,country,TUN,Tunisia,True,0,1,0,1
+Winter,2010,GER,Germany,country,DEU,Germany,True,7,9,13,29
+Winter,2010,CAN,Canada,country,CAN,Canada,True,5,13,7,25
+Winter,2010,NOR,Norway,country,NOR,Norway,True,6,9,8,23
+Winter,2010,AUT,Austria,country,AUT,Austria,True,6,4,6,16
+Winter,2010,RUS,Russia,country,RUS,Russian Federation,True,6,3,5,14
+Winter,2010,FRA,France,country,FRA,France,True,6,2,3,11
+Winter,2010,SWE,Sweden,country,SWE,Sweden,True,4,5,2,11
+Winter,2010,CHN,China,country,CHN,China,True,3,5,2,10
+Winter,2010,SUI,Switzerland,country,CHE,Switzerland,True,3,6,0,9
+Winter,2010,NED,Netherlands,country,NLD,Netherlands,True,3,3,1,7
+Winter,2010,CZE,Czech Republic,country,CZE,Czechia,True,4,2,0,6
+Winter,2010,POL,Poland,country,POL,Poland,True,2,1,3,6
+Winter,2010,ITA,Italy,country,ITA,Italy,True,3,1,1,5
+Winter,2010,JPN,Japan,country,JPN,Japan,True,2,0,3,5
+Winter,2010,FIN,Finland,country,FIN,Finland,True,3,0,1,4
+Winter,2010,AUS,Australia,country,AUS,Australia,True,0,2,1,3
+Winter,2010,BLR,Belarus,country,BLR,Belarus,True,1,1,1,3
+Winter,2010,CRO,Croatia,country,HRV,Croatia,True,1,0,2,3
+Winter,2010,SLO,Slovenia,country,SVN,Slovenia,True,1,0,2,3
+Winter,2010,SVK,Slovakia,country,SVK,Slovak Republic,True,1,1,1,3
+Winter,2010,LAT,Latvia,country,LVA,Latvia,True,0,0,2,2
+Winter,2010,EST,Estonia,country,EST,Estonia,True,0,0,1,1
+Winter,2010,GBR,United Kingdom,country,GBR,United Kingdom,True,0,1,0,1
+Winter,2010,KAZ,Kazakhstan,country,KAZ,Kazakhstan,True,0,0,1,1
+Summer,2012,CHN,China,country,CHN,China,True,21,31,29,81
+Summer,2012,RUS,Russia,country,RUS,Russian Federation,True,31,20,19,70
+Summer,2012,GBR,United Kingdom,country,GBR,United Kingdom,True,19,27,16,62
+Summer,2012,GER,Germany,country,DEU,Germany,True,13,11,19,43
+Summer,2012,JPN,Japan,country,JPN,Japan,True,15,7,14,36
+Summer,2012,AUS,Australia,country,AUS,Australia,True,12,8,15,35
+Summer,2012,FRA,France,country,FRA,France,True,13,11,11,35
+Summer,2012,ITA,Italy,country,ITA,Italy,True,11,7,9,27
+Summer,2012,NED,Netherlands,country,NLD,Netherlands,True,8,6,6,20
+Summer,2012,UKR,Ukraine,country,UKR,Ukraine,True,9,6,4,19
+Summer,2012,ESP,Spain,country,ESP,Spain,True,4,4,10,18
+Summer,2012,HUN,Hungary,country,HUN,Hungary,True,6,8,4,18
+Summer,2012,BRA,Brazil,country,BRA,Brazil,True,9,3,5,17
+Summer,2012,CAN,Canada,country,CAN,Canada,True,12,1,4,17
+Summer,2012,IRI,Iran,country,IRN,"Iran, Islamic Rep.",True,2,5,6,13
+Summer,2012,NZL,New Zealand,country,NZL,New Zealand,True,5,6,2,13
+Summer,2012,CZE,Czech Republic,country,CZE,Czechia,True,4,4,3,11
+Summer,2012,AZE,Azerbaijan,country,AZE,Azerbaijan,True,6,2,2,10
+Summer,2012,BLR,Belarus,country,BLR,Belarus,True,3,2,5,10
+Summer,2012,JAM,Jamaica,country,JAM,Jamaica,True,4,3,3,10
+Summer,2012,KAZ,Kazakhstan,country,KAZ,Kazakhstan,True,6,3,1,10
+Summer,2012,KEN,Kenya,country,KEN,Kenya,True,5,2,3,10
+Summer,2012,DEN,Denmark,country,DNK,Denmark,True,3,2,4,9
+Summer,2012,POL,Poland,country,POL,Poland,True,5,3,1,9
+Summer,2012,ROU,Romania,country,ROU,Romania,True,2,2,5,9
+Summer,2012,SWE,Sweden,country,SWE,Sweden,True,3,1,4,8
+Summer,2012,ETH,Ethiopia,country,ETH,Ethiopia,True,2,3,2,7
+Summer,2012,GEO,Georgia,country,GEO,Georgia,True,3,1,3,7
+Summer,2012,CRO,Croatia,country,HRV,Croatia,True,2,3,1,6
+Summer,2012,IND,India,country,IND,India,True,4,0,2,6
+Summer,2012,IRL,Ireland,country,IRL,Ireland,True,4,1,1,6
+Summer,2012,MEX,Mexico,country,MEX,Mexico,True,3,1,2,6
+Summer,2012,RSA,South Africa,country,ZAF,South Africa,True,1,3,2,6
+Summer,2012,LTU,Lithuania,country,LTU,Lithuania,True,2,2,1,5
+Summer,2012,MGL,Mongolia,country,MNG,Mongolia,True,3,0,2,5
+Summer,2012,ARG,Argentina,country,ARG,Argentina,True,2,1,1,4
+Summer,2012,EGY,Egypt,country,EGY,"Egypt, Arab Rep.",True,1,0,3,4
+Summer,2012,NOR,Norway,country,NOR,Norway,True,1,2,1,4
+Summer,2012,SLO,Slovenia,country,SVN,Slovenia,True,2,1,1,4
+Summer,2012,SRB,Serbia,country,SRB,Serbia,True,2,1,1,4
+Summer,2012,SUI,Switzerland,country,CHE,Switzerland,True,0,2,2,4
+Summer,2012,SVK,Slovakia,country,SVK,Slovak Republic,True,3,0,1,4
+Summer,2012,THA,Thailand,country,THA,Thailand,True,2,0,2,4
+Summer,2012,TTO,Trinidad and Tobago,country,TTO,Trinidad and Tobago,True,2,1,1,4
+Summer,2012,TUR,Turkey,country,TUR,Turkiye,True,1,1,2,4
+Summer,2012,BEL,Belgium,country,BEL,Belgium,True,2,0,1,3
+Summer,2012,FIN,Finland,country,FIN,Finland,True,1,0,2,3
+Summer,2012,INA,Indonesia,country,IDN,Indonesia,True,1,0,2,3
+Summer,2012,TUN,Tunisia,country,TUN,Tunisia,True,1,2,0,3
+Summer,2012,UZB,Uzbekistan,country,UZB,Uzbekistan,True,2,1,0,3
+Summer,2012,ARM,Armenia,country,ARM,Armenia,True,1,0,1,2
+Summer,2012,BUL,Bulgaria,country,BGR,Bulgaria,True,1,0,1,2
+Summer,2012,DOM,Dominican Republic,country,DOM,Dominican Republic,True,0,1,1,2
+Summer,2012,EST,Estonia,country,EST,Estonia,True,1,0,1,2
+Summer,2012,GRE,Greece,country,GRC,Greece,True,2,0,0,2
+Summer,2012,LAT,Latvia,country,LVA,Latvia,True,1,1,0,2
+Summer,2012,MAS,Malaysia,country,MYS,Malaysia,True,1,0,1,2
+Summer,2012,SGP,Singapore,country,SGP,Singapore,True,2,0,0,2
+Summer,2012,AFG,Afghanistan,country,AFG,Afghanistan,True,1,0,0,1
+Summer,2012,BAH,Bahamas,country,BHS,"Bahamas, The",True,0,1,0,1
+Summer,2012,BOT,Botswana,country,BWA,Botswana,True,0,0,1,1
+Summer,2012,BRN,Bahrain,country,BHR,Bahrain,True,1,0,0,1
+Summer,2012,CMR,Cameroon,country,CMR,Cameroon,True,1,0,0,1
+Summer,2012,CYP,Cyprus,country,CYP,Cyprus,True,0,0,1,1
+Summer,2012,GUA,Guatemala,country,GTM,Guatemala,True,0,0,1,1
+Summer,2012,HKG,Hong Kong,country,HKG,"Hong Kong SAR, China",True,1,0,0,1
+Summer,2012,KUW,Kuwait,country,KWT,Kuwait,True,1,0,0,1
+Summer,2012,MAR,Morocco,country,MAR,Morocco,True,1,0,0,1
+Summer,2012,POR,Portugal,country,PRT,Portugal,True,0,0,1,1
+Summer,2012,TJK,Tajikistan,country,TJK,Tajikistan,True,1,0,0,1
+Summer,2012,UGA,Uganda,country,UGA,Uganda,True,0,1,0,1
+Winter,2014,RUS,Russia,country,RUS,Russian Federation,True,9,13,11,33
+Winter,2014,NOR,Norway,country,NOR,Norway,True,10,10,5,25
+Winter,2014,CAN,Canada,country,CAN,Canada,True,5,7,9,21
+Winter,2014,GER,Germany,country,DEU,Germany,True,5,7,6,18
+Winter,2014,NED,Netherlands,country,NLD,Netherlands,True,6,7,5,18
+Winter,2014,AUT,Austria,country,AUT,Austria,True,5,4,7,16
+Winter,2014,FRA,France,country,FRA,France,True,7,4,4,15
+Winter,2014,SWE,Sweden,country,SWE,Sweden,True,5,2,7,14
+Winter,2014,SUI,Switzerland,country,CHE,Switzerland,True,2,6,3,11
+Winter,2014,CHN,China,country,CHN,China,True,2,3,4,9
+Winter,2014,CZE,Czech Republic,country,CZE,Czechia,True,2,2,4,8
+Winter,2014,ITA,Italy,country,ITA,Italy,True,6,0,2,8
+Winter,2014,JPN,Japan,country,JPN,Japan,True,3,1,4,8
+Winter,2014,SLO,Slovenia,country,SVN,Slovenia,True,4,2,2,8
+Winter,2014,POL,Poland,country,POL,Poland,True,1,4,1,6
+Winter,2014,BLR,Belarus,country,BLR,Belarus,True,1,4,0,5
+Winter,2014,FIN,Finland,country,FIN,Finland,True,1,1,3,5
+Winter,2014,GBR,United Kingdom,country,GBR,United Kingdom,True,2,1,1,4
+Winter,2014,LAT,Latvia,country,LVA,Latvia,True,2,0,2,4
+Winter,2014,AUS,Australia,country,AUS,Australia,True,1,0,2,3
+Winter,2014,UKR,Ukraine,country,UKR,Ukraine,True,1,1,0,2
+Winter,2014,CRO,Croatia,country,HRV,Croatia,True,0,0,1,1
+Winter,2014,KAZ,Kazakhstan,country,KAZ,Kazakhstan,True,1,0,0,1
+Winter,2014,SVK,Slovakia,country,SVK,Slovak Republic,True,0,1,0,1
