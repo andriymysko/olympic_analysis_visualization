@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eficiència - Olympic Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-[#0a0a0c] text-slate-200 min-h-screen">
+    
+    <nav class="border-b border-white/5 p-4 flex justify-between items-center sticky top-0 bg-[#0a0a0c]/80 backdrop-blur-md z-50">
+        <a href="index.html" class="font-bold tracking-tighter text-xl">OLYMPIC <span class="text-accent">LAB</span></a>
+        <div class="flex gap-6 text-sm font-medium">
+            <a href="bronze.html" class="text-[#d97706] border-b border-[#d97706]">BRONZE</a>
+            <a href="plata.html" class="hover:text-white transition-colors">PLATA</a>
+            <a href="or.html" class="hover:text-white transition-colors">OR</a>
+            <a href="mapa.html" class="hover:text-white transition-colors">MAPA</a>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto p-6 md:p-12">
+        <header class="mb-12">
+            <div class="flex items-center gap-4 mb-4">
+                <span class="px-3 py-1 bg-orange-700/20 text-[#d97706] text-xs font-bold rounded-full uppercase tracking-widest">Secció Bronze</span>
+                <h1 class="text-4xl font-extrabold tracking-tight">Eficiència de la Inversió</h1>
+            </div>
+            <p class="text-slate-400 max-w-3xl text-lg leading-relaxed">
+                Anàlisi de la correlació directa entre el Producte Interior Brut (PIB) i el rendiment olímpic. 
+                ¿És el volum econòmic un predictor infal·lible de l'èxit, o hi ha països que optimitzen millor els seus recursos?
+            </p>
+        </header>
+
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Gràfic Estiu -->
+            <div class="glass-card rounded-2xl p-6 h-[500px] relative">
+                <h3 class="text-sm font-bold text-[#d97706] uppercase tracking-widest mb-4">Jocs d'Estiu</h3>
+                <div class="h-[380px] w-full">
+                    <canvas id="efficiencySummer"></canvas>
+                </div>
+                <div id="stats-summer" class="absolute top-16 right-8 text-right">
+                    <div class="text-[10px] text-slate-500 uppercase">Correlació R²</div>
+                    <div id="r2-summer" class="text-xl font-mono text-accent">--</div>
+                </div>
+            </div>
+
+            <!-- Gràfic Hivern -->
+            <div class="glass-card rounded-2xl p-6 h-[500px] relative">
+                <h3 class="text-sm font-bold text-blue-400 uppercase tracking-widest mb-4">Jocs d'Hivern</h3>
+                <div class="h-[380px] w-full">
+                    <canvas id="efficiencyWinter"></canvas>
+                </div>
+                <div id="stats-winter" class="absolute top-16 right-8 text-right">
+                    <div class="text-[10px] text-slate-500 uppercase">Correlació R²</div>
+                    <div id="r2-winter" class="text-xl font-mono text-accent">--</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="data-bundle.js"></script>
+    <script src="cycle-data-bundle.js"></script>
+    <script src="shared.js"></script>
+    <script>
+        function createEfficiencyChart(ctxId, r2Id, data, color) {
+            const points = data.map(d => ({
+                x: parseFloat(d.pt_gdp_prev_cycle_mean),
+                y: parseInt(d.total_medals),
+                country: d.country_name
+            })).filter(p => p.x > 0);
+
+            const regression = calculateRegression(points);
+            document.getElementById(r2Id).innerText = regression.r2.toFixed(3);
+
+            new Chart(document.getElementById(ctxId), {
+                type: 'scatter',
+                data: {
+                    datasets: [
+                        {
+                            label: 'Països',
+                            data: points,
+                            backgroundColor: color + '66',
+                            borderColor: color,
+                            borderWidth: 1,
+                            pointRadius: 4
+                        },
+                        {
+                            label: 'Tendència',
+                            data: regression.line,
+                            type: 'line',
+                            borderColor: 'rgba(255,255,255,0.3)',
+                            borderDash: [5, 5],
+                            borderWidth: 1,
+                            pointRadius: 0,
+                            fill: false
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { title: { display: true, text: '% PIB Inversió' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                        y: { title: { display: true, text: 'Medalles' }, grid: { color: 'rgba(255,255,255,0.05)' } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: (c) => c.datasetIndex === 0 ? `${c.raw.country}: ${c.raw.y} medalles` : 'Tendència'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        async function init() {
+            const data = await loadDataset(DATA_PATHS.cycle_analysis);
+            const summerData = data.filter(d => d.season === 'Summer');
+            const winterData = data.filter(d => d.season === 'Winter');
+
+            createEfficiencyChart('efficiencySummer', 'r2-summer', summerData, '#d97706');
+            createEfficiencyChart('efficiencyWinter', 'r2-winter', winterData, '#60a5fa');
+            
+            document.getElementById('chart-loader').style.display = 'none';
+        }
+
+        window.addEventListener('load', init);
+    </script>
+</body>
+</html>
